@@ -31,7 +31,8 @@ jobs:
         run: |
           cp .deployment ./myapp
           cp deploy.cmd ./myapp
-          
+          cp -r deployment ./myapp
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
