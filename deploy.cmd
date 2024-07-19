@@ -66,6 +66,17 @@ IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
 )
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+goto PostCleanup
+
+
+:PostCleanup
+:: 2. Clear the temp space
+echo "Listing temp space in %DEPLOYMENT_TEMP%"
+for /d %%X in ("%DEPLOYMENT_TEMP%/*") do dir /a-d /b "%%X"
+for %%X in ("%DEPLOYMENT_TEMP%/*.*") do dir /a-d /b "%%X"
+:: for /d %%X in ("%DEPLOYMENT_TEMP%/*") do rmdir /s /q "%%X"
+:: for %%X in ("%DEPLOYMENT_TEMP%/*.*") do del /q "%%X"
+
 goto end
 
 :: Execute command routine that will echo out when error
@@ -91,3 +102,4 @@ exit /b 1
 :end
 endlocal
 echo Finished successfully.
+
