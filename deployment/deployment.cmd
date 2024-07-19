@@ -1,4 +1,4 @@
-echo "Post Deployment Action by Brian"
+echo "Post Deployment Action by Brian!"
 :: 1. Script to run Kudu Sync
 ::echo "Running Kudu Sync"
 ::call :ExecuteCmd "%DEPLOYMENT_SOURCE%\KuduSync\KuduSync.cmd" -v 50 -f "%DEPLOYMENT_SOURCE%" -t "%DEPLOYMENT_TARGET%" -n "%NEXT_MANIFEST_PATH%" -p "%PREVIOUS_MANIFEST_PATH%" -i ".git;.hg;.deployment;deploy.cmd"
@@ -12,5 +12,5 @@ echo "Post Deployment Action by Brian"
 :: for %%X in ("%DEPLOYMENT_TEMP%/*.*") do del /q "%%X"
 
 :: 3. If there's an error, stop the deployment
-:error
-exit /b %errorlevel%
+::error
+::exit /b %errorlevel%
