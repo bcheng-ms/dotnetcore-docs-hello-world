@@ -1,2 +1,2 @@
 [config]
-POST_DEPLOYMENT_ACTION_DIR = deployment\
+SCM_POST_DEPLOYMENT_ACTIONS_PATH = deployment\
